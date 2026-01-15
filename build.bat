@@ -6,11 +6,11 @@ echo ========================
 REM Clean previous build
 rmdir /s /q build
 rmdir /s /q dist
-del /q hello.spec
+del /q innoselfupdate.spec
 
 REM Run PyInstaller
-pyinstaller hello_v1.2.1.py ^
-    --name hello ^
+pyinstaller main_v1.0.0.py ^
+    --name innoselfupdate ^
     --noconfirm ^
     --windowed ^
     --clean ^

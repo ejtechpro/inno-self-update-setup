@@ -1,4 +1,4 @@
-Hello App - Self-Updating Application
+Inno Self-Updating Application
 A modern, self-updating desktop application built with Python and PySide6 that features automatic updates, resume capabilities, and a professional installation experience.
 
 🌟 Features

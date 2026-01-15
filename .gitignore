@@ -1,4 +1,6 @@
 .env
 dist
 build
-hello.spec
+innoselfupdate.spec
+build.bat
+backup.py
