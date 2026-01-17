@@ -17,7 +17,7 @@ from PySide6.QtCore import QThread, Signal, Qt, QTimer, QSettings
 
 # Get the actual executable name from sys.argv[0]
 APP_NAME = os.path.basename(sys.executable) if hasattr(sys, 'frozen') else "innoselfupdate.exe"
-CURRENT_VERSION = "1.1.0"
+CURRENT_VERSION = "1.0.0"
 VERSION_URL = "https://raw.githubusercontent.com/ejtechpro/inno-self-update-setup/main/version.json"
 
 
@@ -772,7 +772,7 @@ class UpdateTab(QWidget):
             return False
         
         # Check if file exists and is not corrupted
-        file_path = state.get("file", os.path.join(APP_DATA_DIR, f"innoselfupdate_{CURRENT_VERSION}.exe"))
+        file_path = state.get("file", os.path.join(APP_DATA_DIR, f"innoselfupdate_v{CURRENT_VERSION}.exe"))
         if not os.path.exists(file_path):
             return False
         
@@ -818,7 +818,7 @@ class UpdateTab(QWidget):
                 os.remove(STATE_FILE)
             
             # Also clean up partial download file if it exists
-            temp_file = os.path.join(APP_DATA_DIR, f"innoselfupdate_{CURRENT_VERSION}.exe")
+            temp_file = os.path.join(APP_DATA_DIR, f"innoselfupdate_v{CURRENT_VERSION}.exe")
             if os.path.exists(temp_file):
                 try:
                     os.remove(temp_file)

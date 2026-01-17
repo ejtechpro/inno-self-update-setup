@@ -23,7 +23,7 @@ DefaultDirName={autopf}\{#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
-PrivilegesRequired=none
+PrivilegesRequired=admin
 CloseApplications=force
 RestartApplications=yes
 DisableDirPage=yes
@@ -41,10 +41,10 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\Dev\Python\inno-self-update-setup\dist\innoselfupdate\pExeName}"; \
+Source: "D:\Dev\Python\inno-self-update-setup\dist\innoselfupdate\{#MyAppExeName}"; \
     DestDir: "{app}"; Flags: ignoreversion overwritereadonly
 
-Source: "D:\Dev\Python\inno-self-update-setup\dist\innoselfupdate\nal\*"; \
+Source: "D:\Dev\Python\inno-self-update-setup\dist\innoselfupdate\_internal\*"; \
     DestDir: "{app}\_internal"; Flags: ignoreversion overwritereadonly recursesubdirs createallsubdirs
 
 [Registry]

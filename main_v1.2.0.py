@@ -772,7 +772,7 @@ class UpdateTab(QWidget):
             return False
         
         # Check if file exists and is not corrupted
-        file_path = state.get("file", os.path.join(APP_DATA_DIR, f"innoselfupdate_{CURRENT_VERSION}.exe"))
+        file_path = state.get("file", os.path.join(APP_DATA_DIR, f"innoselfupdate_v{CURRENT_VERSION}.exe"))
         if not os.path.exists(file_path):
             return False
         
@@ -818,7 +818,7 @@ class UpdateTab(QWidget):
                 os.remove(STATE_FILE)
             
             # Also clean up partial download file if it exists
-            temp_file = os.path.join(APP_DATA_DIR, f"innoselfupdate_{CURRENT_VERSION}.exe")
+            temp_file = os.path.join(APP_DATA_DIR, f"innoselfupdate_v{CURRENT_VERSION}.exe")
             if os.path.exists(temp_file):
                 try:
                     os.remove(temp_file)
