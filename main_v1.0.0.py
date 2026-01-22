@@ -403,7 +403,7 @@ class UpdateThread(QThread):
                     print(f"Resuming download from byte {start_byte}")
                 else:
                     # File was deleted but state exists - start from beginning
-                    print("Download file missing, starting from beginning")
+                    print("Download file missing, starting from beginning to end!")
                     self._cleanup_state()  # Clean up invalid state
                     start_byte = 0
                     mode = "wb"
@@ -415,7 +415,7 @@ class UpdateThread(QThread):
                     
                     # Handle 206 Partial Content for resume
                     if start_byte > 0 and r.status_code != 206:
-                        print("Server doesn't support resume, starting from beginning")
+                        print("Server doesn\'t support resume, starting from beginning")
                         start_byte = 0
                         mode = "wb"
                         headers = {}
